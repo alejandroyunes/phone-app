@@ -1,6 +1,7 @@
 import { Dispatch, FC, SetStateAction } from 'react'
 import './modal-remove.scss'
 import { AiFillCloseCircle } from 'react-icons/ai'
+import { PhoneBookEntry } from '../../App';
 
 export interface RemoveProps {
   setRemoveModal: Dispatch<SetStateAction<boolean>>
