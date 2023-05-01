@@ -4,14 +4,11 @@ import { BsPlusCircleFill } from 'react-icons/bs'
 import { BiSearchAlt2 } from 'react-icons/bi'
 import { useState } from 'react'
 
-export default function PhoneBookHeader ({ setAddModal }) {
-  const [searchValue, setSearchValue] = useState('')
-
-  const handleSearch = e => {
-    const value = e.target.value
-    setSearchValue(value)
-  }
-
+export default function PhoneBookHeader ({
+  setAddModal,
+  setSearchTerm,
+  searchTerm
+}) {
   return (
     <div className='header-wrapper'>
       <div className='header-icons'>
@@ -28,10 +25,11 @@ export default function PhoneBookHeader ({ setAddModal }) {
       <div className='search'>
         <BiSearchAlt2 />
         <input
-          onChange={e => handleSearch(e)}
+          onChange={e => setSearchTerm(e.target.value)}
           id='search'
           name='search'
           type='text'
+          value={searchTerm}
           placeholder='Search Contact'
         />
       </div>

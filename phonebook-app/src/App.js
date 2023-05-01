@@ -4,6 +4,7 @@ import PhoneBookBody from './components/phonebook-body'
 import RemoveContactModal from './components/modal-remove-contact'
 import AddContactModal from './components/modal-add-contact'
 import { useState } from 'react'
+
 function PhoneApp () {
   // let sortedPhoneBook = phoneBook.sort((a, b) => {
   //   if (a.name < b.name) {
@@ -42,7 +43,11 @@ function PhoneApp () {
   }
   return (
     <>
-      <PhoneBookHeader setAddModal={setAddModal} />
+      <PhoneBookHeader
+        setAddModal={setAddModal}
+        setSearchTerm={setSearchTerm}
+        searchTerm={searchTerm}
+      />
       <PhoneBookBody
         setRemoveModal={setRemoveModal}
         phoneBook={filteredPhoneBook}
