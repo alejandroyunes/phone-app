@@ -16,6 +16,7 @@ This is a simple phone book application built with React and TypeScript. It allo
 
 1. Run `npm start` to start the development server.
 2. Open [http://localhost:3000] in your browser.
+3. Run `npm test` to start the test server.
 
 ## Features
 
