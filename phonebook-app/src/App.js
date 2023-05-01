@@ -1,15 +1,10 @@
+import Layout from "./components/layout";
+import PhoneBookHeader from "./components/phonebook-header";
 
-function App() {
+function PhoneApp() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          clean version
-        </p>
-
-      </header>
-    </div>
+      <PhoneBookHeader />
   );
 }
 
-export default App;
+export default PhoneApp;

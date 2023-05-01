@@ -1,0 +1,10 @@
+.header-wrapper {
+    outline: 3px solid red;
+    max-width: 900px;
+    margin: 0 auto;
+
+    .header-icons {
+        display: flex;
+        gap: 40px;
+    }
+}
