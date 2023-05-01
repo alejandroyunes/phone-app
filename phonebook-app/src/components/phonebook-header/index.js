@@ -7,7 +7,6 @@ export default function PhoneBookHeader (){
 
     const handleSearchInput = (e) => {
         const value = e.target.value
-
     }
 
     return (
