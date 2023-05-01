@@ -2,7 +2,6 @@ import './phonebook-header.scss'
 import { AiFillHome } from 'react-icons/ai'
 import { BsPlusCircleFill } from 'react-icons/bs'
 import { BiSearchAlt2 } from 'react-icons/bi'
-import { useState } from 'react'
 
 export default function PhoneBookHeader ({
   setAddModal,
