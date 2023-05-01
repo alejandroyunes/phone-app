@@ -27,7 +27,7 @@ export const RemoveContactModal: FC<RemoveProps> = ({
     <div className='modal-remove-wrapper'>
       <div className='modal-overview'>
         <div className='modal-container'>
-          <div className='close-modal' onClick={() => onClose()}>
+          <div className='close-modal' onClick={onClose}>
             <AiFillCloseCircle />
           </div>
           <div className='cancel-modal'>
