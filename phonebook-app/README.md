@@ -9,7 +9,7 @@ This is a simple phone book application built with React and TypeScript. It allo
 
 ## Installation
 
-1. Clone this repository.
+1. Clone this repository https://github.com/alejandroyunes/phone-app.git
 2. Run `npm install` to install dependencies.
 
 ## Usage

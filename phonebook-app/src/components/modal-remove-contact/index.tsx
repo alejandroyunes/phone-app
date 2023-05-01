@@ -1,7 +1,6 @@
 import { Dispatch, FC, SetStateAction } from 'react'
 import './modal-remove.scss'
 import { AiFillCloseCircle } from 'react-icons/ai'
-import { PhoneBookEntry } from '../../App';
 
 export interface RemoveProps {
   setRemoveModal: Dispatch<SetStateAction<boolean>>
@@ -36,8 +35,8 @@ export const RemoveContactModal: FC<RemoveProps> = ({
               <h4>Are you sure you want to delete the contact?</h4>
             </div>
             <div className='cancel-buttons'>
-              <button onClick={() => onClose()}>No</button>
-              <button onClick={() => handleCancelRemoveContact()}>Yes</button>
+              <button onClick={onClose}>No</button>
+              <button onClick={handleCancelRemoveContact}>Yes</button>
             </div>
           </div>
         </div>
