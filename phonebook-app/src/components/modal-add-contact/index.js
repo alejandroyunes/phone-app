@@ -117,11 +117,3 @@ export default function AddContactModal ({
     </div>
   )
 }
-
-//   /^\(?: The number may start with an open parenthesis.
-//     (\d{3}): Then three numeric digits must be entered for valid formats. If there is no parenthesis, the number must start with these digits.
-//     \)?: It allows you to include a close parenthesis.
-//     [- ]?: The string may optionally contain a hyphen. It can be placed either after the parenthesis or following the first three digits. For example, (123)- or 123-.
-//     (\d{3}): Then the number must contain another three digits. For example, it can look like this: (123)-456, 123-456, or 123456.
-//     [- ]?: It allows you to include an optional hyphen in the end, like this: (123)-456-, -123- or 123456-.
-//     (\d{4})$/: Finally, the sequence must end with four digits. For example, (123)-456-7890, 123-456-7890, or 123456-7890.
