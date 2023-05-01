@@ -7,6 +7,11 @@ import { object, string } from 'yup'
 import { Dispatch, FC, SetStateAction } from 'react'
 import { PhoneBookEntry } from '../../App'
 
+export interface FormPhoneBookProps {
+  name: string;
+  lastName: string;
+  phone: string;
+}
 interface AddModalProps {
   setAddModal: Dispatch<SetStateAction<boolean>>;
   setPhoneBook: Dispatch<SetStateAction<PhoneBookEntry[]>>;
@@ -22,7 +27,7 @@ export const AddContactModal: FC<AddModalProps> = ({
     setAddModal(false)
   }
 
-  const handleSubmitContact = async (resultValues: any) => {
+  const handleSubmitContact = async (resultValues: FormPhoneBookProps) => {
     setAddModal(false)
 
     const values = {
@@ -46,7 +51,7 @@ export const AddContactModal: FC<AddModalProps> = ({
     handleSubmit,
     register,
     formState: { errors, isSubmitting }
-  } = useForm({
+  } = useForm<FormPhoneBookProps>({
     mode: 'onBlur',
     defaultValues: {
       name: '',
@@ -74,7 +79,6 @@ export const AddContactModal: FC<AddModalProps> = ({
                     <span>*</span>First Name
                   </label>
                   <input
-                    // name='name'
                     type='text'
                     {...register('name')}
                     placeholder='First Name'
@@ -89,7 +93,6 @@ export const AddContactModal: FC<AddModalProps> = ({
                     <span>*</span>Last Name
                   </label>
                   <input
-                    // name='lastName'
                     type='text'
                     {...register('lastName')}
                     placeholder='Last Name'
@@ -104,7 +107,6 @@ export const AddContactModal: FC<AddModalProps> = ({
                     <span>*</span>Phone
                   </label>
                   <input
-                    // name='phone'
                     type='text'
                     {...register('phone')}
                     placeholder='Phone Number'
