@@ -45,7 +45,7 @@
     }
 
     svg:hover {
-      filter: drop-shadow(1px 1px 1px #dbecfe);
+      filter: drop-shadow(1px 1px 1px $svg-shadow);
     }
   }
 

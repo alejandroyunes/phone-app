@@ -16,7 +16,7 @@
       cursor: pointer;
     }
     svg:hover {
-      filter: drop-shadow(1px 1px 1px #dbecfe);
+      filter: drop-shadow(1px 1px 1px $svg-shadow);
     }
   }
   .contact {
@@ -26,7 +26,7 @@
   .search {
     display: flex;
     align-items: center;
-    background-color: #d4d4ed;
+    background-color: $input-color;
     border-radius: 8px;
     padding: 8px;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
@@ -37,7 +37,7 @@
       fill: $main-blue;
     }
     input {
-      background-color: #d4d4ed;
+      background-color: $input-color;
       border: none;
       width: 100%;
       height: 32px;
@@ -46,7 +46,7 @@
       color: rgb(79, 76, 76);
       font-size: 18px;
       padding-left: 8px;
-      box-shadow: 0 0 0px 1000px #d4d4ed inset;
+      box-shadow: 0 0 0px 1000px $input-color inset;
       &::placeholder {
         padding-left: 8px;
         font-size: 18px;
