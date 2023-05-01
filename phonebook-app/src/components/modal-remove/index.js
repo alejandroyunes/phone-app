@@ -1,16 +1,16 @@
 import './remove-modal.scss'
 import { AiFillCloseCircle } from 'react-icons/ai'
 
-export default function RemoveModal({ setIsOpen, setIsCancel, setCancelAll }) {
+export default function RemoveModal({ setIsRemoveOpen, setIsCancel }) {
 
-    const closeCalculation = () => {
+    const handleCancelRemoveContact = () => {
         setIsCancel(false);
-        setIsOpen(false);
-        setCancelAll(true);
+        setIsRemoveOpen(false);
+        console.log('cancel')
     };
 
     const onClose = () => {
-        setIsOpen(true);
+        setIsRemoveOpen(true);
         setIsCancel(false);
     };
 
@@ -25,7 +25,7 @@ export default function RemoveModal({ setIsOpen, setIsCancel, setCancelAll }) {
                         <div><h4>Are you sure you want to delete the contact?</h4></div>
                         <div className="cancel-buttons">
                             <button onClick={() => onClose()}>No</button>
-                            <button onClick={() => closeCalculation()}>Yes</button>
+                            <button onClick={() => handleCancelRemoveContact()}>Yes</button>
                         </div>
                     </div>
                 </div>

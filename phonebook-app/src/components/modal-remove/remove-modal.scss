@@ -1,10 +1,4 @@
-$main-black: #323741;
-$sub-black: #575757;
-$main-background: #fafafa;
-$border-light-gray: #a3a0a0;
-
-$mobile: 900px;
-$desktop: 1200px;
+@import '../../app.scss';
 
 .modal-remove-wrapper {
     width: 100vw;
