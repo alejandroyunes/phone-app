@@ -6,22 +6,6 @@ import AddContactModal from './components/modal-add-contact'
 import { useState } from 'react'
 
 function PhoneApp () {
-  // let sortedPhoneBook = phoneBook.sort((a, b) => {
-  //   if (a.name < b.name) {
-  //     return -1
-  //   } else if (a.name > b.name) {
-  //     return 1
-  //   } else {
-  //     if (a.lastName < b.lastName) {
-  //       return -1
-  //     } else if (a.lastName > b.lastName) {
-  //       return 1
-  //     } else {
-  //       return 0
-  //     }
-  //   }
-  // })
-
   const [isAddModal, setAddModal] = useState(false)
   const [isRemoveModalOpen, setRemoveModal] = useState(false)
 
@@ -29,13 +13,29 @@ function PhoneApp () {
   const [searchTerm, setSearchTerm] = useState('')
   const [contactToDelete, setContactToDelete] = useState('')
 
-  const filteredPhoneBook = phoneBook.filter(entry => {
-    return (
-      entry.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      entry.lastName.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      entry.phone.includes(searchTerm)
-    )
-  })
+  const filteredPhoneBook = phoneBook
+    .filter(entry => {
+      return (
+        entry.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        entry.lastName.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        entry.phone.includes(searchTerm)
+      )
+    })
+    .sort((a, b) => {
+      if (a.name < b.name) {
+        return -1
+      } else if (a.name > b.name) {
+        return 1
+      } else {
+        if (a.lastName < b.lastName) {
+          return -1
+        } else if (a.lastName > b.lastName) {
+          return 1
+        } else {
+          return 0
+        }
+      }
+    })
 
   const handleDeleteEntry = id => {
     const updatedPhoneBook = phoneBook.filter(entry => entry.id !== id)
