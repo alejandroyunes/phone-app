@@ -21,12 +21,6 @@ export default function Layout (){
     }
 ]
 
-const emptyArray = [
-    {},
-    {},
-    {}
-]
-
     return (
         <div className="body-wrapper">
                 {array ? array.map((e) => 
@@ -44,7 +38,6 @@ const emptyArray = [
                     <h3>no contacts</h3>
                     <h2></h2>
                 </div>
-
     }
         </div>
     )
