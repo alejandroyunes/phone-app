@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 
-import PhoneApp from './App'
+import PhoneApp from './PhoneApp'
 import reportWebVitals from './reportWebVitals'
 
 const root = ReactDOM.createRoot(document.getElementById('root'))

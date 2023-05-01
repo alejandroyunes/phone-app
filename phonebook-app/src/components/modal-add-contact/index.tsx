@@ -5,7 +5,8 @@ import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 import { object, string } from 'yup'
 import { Dispatch, FC, SetStateAction } from 'react'
-import { PhoneBookEntry } from '../../App'
+import { PhoneBookEntry } from '../../PhoneApp'
+import { phoneRegex } from '../../utils'
 
 export interface FormPhoneBookProps {
   name: string;
@@ -31,14 +32,11 @@ export const AddContactModal: FC<AddModalProps> = ({
     setAddModal(false)
 
     const values = {
-      id: Math.random().toString(36).substr(2, 9),
+      id: Math.random().toString(36).slice(2, 9),
       ...resultValues
     }
     setPhoneBook([...phoneBook, values])
   }
-
-  const phoneRegex = RegExp(/^\(?(\d{3})\)?[- ]?(\d{3})[- ]?(\d{4})$/)
-
   const validationSchema = object({
     name: string().required('This field is required'),
     lastName: string().required('This field is required'),

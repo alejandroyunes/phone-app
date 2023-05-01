@@ -1,7 +1,7 @@
 import { FC, Dispatch, SetStateAction } from 'react'
 import './phonebook-body.scss'
 import { AiOutlineDelete } from 'react-icons/ai'
-import { PhoneBookEntry } from '../../App';
+import { PhoneBookEntry } from '../../PhoneApp';
 
 interface BodyProps {
   setRemoveModal: Dispatch<SetStateAction<boolean>>;
