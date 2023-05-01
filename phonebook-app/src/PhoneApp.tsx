@@ -3,7 +3,7 @@ import { PhoneBookHeader } from './components/phonebook-header'
 import { PhoneBookBody } from './components/phonebook-body'
 import { RemoveContactModal } from './components/modal-remove-contact'
 import { AddContactModal } from './components/modal-add-contact'
-import { FC, Fragment, useState } from 'react'
+import { FC, useState } from 'react'
 
 export interface PhoneBookEntry {
   id: string;
@@ -49,10 +49,10 @@ const PhoneApp: FC = () => {
     const updatedPhoneBook = phoneBook.filter(entry => entry.id !== id)
     setPhoneBook(updatedPhoneBook)
   }
+
   return (
-    <Fragment data-testid="phone-app">
+    <>
       <PhoneBookHeader
-        data-testid="phone-app"
         setAddModal={setAddModal}
         setSearchTerm={setSearchTerm}
         searchTerm={searchTerm}
@@ -77,7 +77,7 @@ const PhoneApp: FC = () => {
           handleDeleteEntry={handleDeleteEntry}
         />
       )}
-    </Fragment>
+    </>
   )
 }
 

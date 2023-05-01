@@ -9,7 +9,6 @@ interface BodyProps {
   setContactToDelete: Dispatch<SetStateAction<string>>
 }
 
-
 export const PhoneBookBody: FC<BodyProps> = ({
   setRemoveModal,
   phoneBook,
@@ -33,6 +32,7 @@ export const PhoneBookBody: FC<BodyProps> = ({
               <h2>{e.phone}</h2>
             </div>
             <div
+              data-testid="delete-svg"
               className='delete-svg'
               onClick={() => handleDeleteContact(e.id)}
             >

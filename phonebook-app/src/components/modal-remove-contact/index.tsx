@@ -27,7 +27,7 @@ export const RemoveContactModal: FC<RemoveProps> = ({
     <div className='modal-remove-wrapper'>
       <div className='modal-overview'>
         <div className='modal-container'>
-          <div className='close-modal' onClick={onClose}>
+          <div className='close-modal' data-testid="close-button" onClick={onClose}>
             <AiFillCloseCircle />
           </div>
           <div className='cancel-modal'>
@@ -35,8 +35,8 @@ export const RemoveContactModal: FC<RemoveProps> = ({
               <h4>Are you sure you want to delete the contact?</h4>
             </div>
             <div className='cancel-buttons'>
-              <button onClick={onClose}>No</button>
-              <button onClick={handleCancelRemoveContact}>Yes</button>
+              <button data-testid="no-button" onClick={onClose}>No</button>
+              <button data-testid="yes-button" onClick={handleCancelRemoveContact}>Yes</button>
             </div>
           </div>
         </div>

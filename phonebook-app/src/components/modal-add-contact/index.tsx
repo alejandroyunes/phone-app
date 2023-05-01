@@ -63,7 +63,7 @@ export const AddContactModal: FC<AddModalProps> = ({
     <div className='modal-add-wrapper'>
       <div className='modal-overview'>
         <div className='modal-add-container'>
-          <div className='close-modal' onClick={onClose}>
+          <div className='close-modal' data-testid="close-modal" onClick={onClose}>
             <AiFillCloseCircle />
           </div>
           <div className='body-modal'>
