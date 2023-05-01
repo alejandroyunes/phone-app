@@ -1,5 +1,5 @@
 import "./phonebook-body.scss"
-
+import {AiOutlineDelete} from 'react-icons/ai'
 
 export default function Layout (){
 
@@ -21,13 +21,31 @@ export default function Layout (){
     }
 ]
 
+const emptyArray = [
+    {},
+    {},
+    {}
+]
+
     return (
         <div className="body-wrapper">
-                {array.map((e) => 
+                {array ? array.map((e) => 
                 <div className="body-content"> 
-                    <h3>{e.firstName} {e.lastName}</h3>
-                    <h2>{e.phone}</h2>
-                </div> )}
+                    <div className="info">
+                        <h3>{e.firstName} {e.lastName}</h3>
+                        <h2>{e.phone}</h2>
+                    </div>
+                    <div className="delete-svg">
+                        <AiOutlineDelete/>
+                    </div>
+                </div>  )
+                    :
+                <div className="body-no-content"> 
+                    <h3>no contacts</h3>
+                    <h2></h2>
+                </div>
+
+    }
         </div>
     )
 }
