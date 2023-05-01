@@ -4,17 +4,25 @@ import { AiFillCloseCircle } from 'react-icons/ai'
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 import { object, string } from 'yup'
+import { Dispatch, FC, SetStateAction } from 'react'
+import { PhoneBookEntry } from '../../App'
 
-export default function AddContactModal ({
+interface AddModalProps {
+  setAddModal: Dispatch<SetStateAction<boolean>>;
+  setPhoneBook: Dispatch<SetStateAction<PhoneBookEntry[]>>;
+  phoneBook: PhoneBookEntry[];
+}
+
+export const AddContactModal: FC<AddModalProps> = ({
   setAddModal,
   setPhoneBook,
   phoneBook
-}) {
+}) => {
   const onClose = () => {
     setAddModal(false)
   }
 
-  const handleSubmitContact = async resultValues => {
+  const handleSubmitContact = async (resultValues: any) => {
     setAddModal(false)
 
     const values = {
@@ -66,7 +74,7 @@ export default function AddContactModal ({
                     <span>*</span>First Name
                   </label>
                   <input
-                    name='name'
+                    // name='name'
                     type='text'
                     {...register('name')}
                     placeholder='First Name'
@@ -81,7 +89,7 @@ export default function AddContactModal ({
                     <span>*</span>Last Name
                   </label>
                   <input
-                    name='lastName'
+                    // name='lastName'
                     type='text'
                     {...register('lastName')}
                     placeholder='Last Name'
@@ -96,7 +104,7 @@ export default function AddContactModal ({
                     <span>*</span>Phone
                   </label>
                   <input
-                    name='phone'
+                    // name='phone'
                     type='text'
                     {...register('phone')}
                     placeholder='Phone Number'

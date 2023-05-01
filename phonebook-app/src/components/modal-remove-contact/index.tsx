@@ -1,11 +1,18 @@
+import { Dispatch, FC, SetStateAction } from 'react'
 import './modal-remove.scss'
 import { AiFillCloseCircle } from 'react-icons/ai'
 
-export default function RemoveContactModal ({
+export interface RemoveProps {
+  setRemoveModal: Dispatch<SetStateAction<boolean>>
+  contactToDelete: string;
+  handleDeleteEntry: (id: string) => void
+}
+
+export const RemoveContactModal: FC<RemoveProps> = ({
   setRemoveModal,
   contactToDelete,
   handleDeleteEntry
-}) {
+}) => {
 
   const handleCancelRemoveContact = () => {
     setRemoveModal(false)

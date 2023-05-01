@@ -1,13 +1,22 @@
-import { useEffect } from 'react'
+import { FC, Dispatch, SetStateAction } from 'react'
 import './phonebook-body.scss'
 import { AiOutlineDelete } from 'react-icons/ai'
+import { PhoneBookEntry } from '../../App';
 
-export default function PhoneBookBody ({
+interface BodyProps {
+  setRemoveModal: Dispatch<SetStateAction<boolean>>;
+  phoneBook: PhoneBookEntry[];
+  setContactToDelete: Dispatch<SetStateAction<string>>
+}
+
+
+export const PhoneBookBody: FC<BodyProps> = ({
   setRemoveModal,
   phoneBook,
   setContactToDelete
-}) {
-  const handleDeleteContact = e => {
+}) => {
+
+  const handleDeleteContact = (e: string) => {
     setRemoveModal(true)
     setContactToDelete(e)
   }

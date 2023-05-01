@@ -2,12 +2,19 @@ import './phonebook-header.scss'
 import { AiFillHome } from 'react-icons/ai'
 import { BsPlusCircleFill } from 'react-icons/bs'
 import { BiSearchAlt2 } from 'react-icons/bi'
+import { Dispatch, FC, SetStateAction } from 'react';
 
-export default function PhoneBookHeader ({
+interface HeaderProps {
+  setAddModal: Dispatch<SetStateAction<boolean>>;
+  setSearchTerm: Dispatch<SetStateAction<string>>;
+  searchTerm: string;
+}
+
+export const PhoneBookHeader: FC<HeaderProps> = ({
   setAddModal,
   setSearchTerm,
   searchTerm
-}) {
+}) => {
   return (
     <div className='header-wrapper'>
       <div className='header-icons'>
@@ -35,3 +42,5 @@ export default function PhoneBookHeader ({
     </div>
   )
 }
+
+

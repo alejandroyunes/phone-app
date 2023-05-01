@@ -1,17 +1,25 @@
 import './app.scss'
-import PhoneBookHeader from './components/phonebook-header'
-import PhoneBookBody from './components/phonebook-body'
-import RemoveContactModal from './components/modal-remove-contact'
-import AddContactModal from './components/modal-add-contact'
-import { useState } from 'react'
+import { PhoneBookHeader } from './components/phonebook-header'
+import { PhoneBookBody } from './components/phonebook-body'
+import { RemoveContactModal } from './components/modal-remove-contact'
+import { AddContactModal } from './components/modal-add-contact'
+import { FC, useState } from 'react'
 
-function PhoneApp () {
-  const [isAddModal, setAddModal] = useState(false)
-  const [isRemoveModalOpen, setRemoveModal] = useState(false)
+export interface PhoneBookEntry {
+  id: string;
+  name: string;
+  lastName: string;
+  phone: string;
+}
 
-  const [phoneBook, setPhoneBook] = useState([])
-  const [searchTerm, setSearchTerm] = useState('')
-  const [contactToDelete, setContactToDelete] = useState('')
+const PhoneApp: FC = () => {
+
+  const [isAddModal, setAddModal] = useState<boolean>(false)
+  const [isRemoveModalOpen, setRemoveModal] = useState<boolean>(false)
+
+  const [phoneBook, setPhoneBook] = useState<PhoneBookEntry[]>([])
+  const [searchTerm, setSearchTerm] = useState<string>('')
+  const [contactToDelete, setContactToDelete] = useState<string>('')
 
   const filteredPhoneBook = phoneBook
     .filter(entry => {
@@ -37,7 +45,7 @@ function PhoneApp () {
       }
     })
 
-  const handleDeleteEntry = id => {
+  const handleDeleteEntry = (id: string) => {
     const updatedPhoneBook = phoneBook.filter(entry => entry.id !== id)
     setPhoneBook(updatedPhoneBook)
   }
