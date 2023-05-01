@@ -1,10 +1,49 @@
 .header-wrapper {
-    outline: 3px solid red;
+
+    padding: 0 24px;
     max-width: 900px;
-    margin: 0 auto;
+    margin: 24px auto 0;
 
     .header-icons {
         display: flex;
+        justify-content: space-between;
         gap: 40px;
+        svg {
+            height: 32px;
+            width: 32px;
+            fill: #0A84FE;
+            cursor: pointer;
+        }
+    }
+    .contact {
+        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+    .search {
+        display: flex;
+        align-items: center;
+        background-color: #d4d4ed;
+        border-radius: 8px;
+        padding: 8px;
+        svg {
+            height: 24px;
+            width: 24px;
+            fill: #0A84FE;
+        }
+        input {
+            background-color: #d4d4ed;
+            border: none;
+            width: 100%;
+            height: 32px;
+            padding: 0;
+            outline: none;
+            color: #0A84FE;
+            font-size: 18px;
+            padding-left: 8px;
+
+        &::placeholder {
+                padding-left: 8px;
+                font-size: 18px;
+            }
+        }
     }
 }
