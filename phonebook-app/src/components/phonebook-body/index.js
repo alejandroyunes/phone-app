@@ -1,7 +1,7 @@
 import "./phonebook-body.scss"
 import {AiOutlineDelete} from 'react-icons/ai'
 
-export default function Layout (){
+export default function PhoneBookBody ({setIsRemoveOpen}){
 
     const array = [
     {
@@ -23,13 +23,13 @@ export default function Layout (){
 
     return (
         <div className="body-wrapper">
-                {array ? array.map((e) => 
-                <div className="body-content"> 
+                {array ? array.map((e, i) => 
+                <div className="body-content" key={i}> 
                     <div className="info">
                         <h3>{e.firstName} {e.lastName}</h3>
                         <h2>{e.phone}</h2>
                     </div>
-                    <div className="delete-svg">
+                    <div className="delete-svg" onClick={() => setIsRemoveOpen(true)}>
                         <AiOutlineDelete/>
                     </div>
                 </div>  )

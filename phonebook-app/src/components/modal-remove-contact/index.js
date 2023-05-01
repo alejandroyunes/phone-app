@@ -1,17 +1,15 @@
-import './remove-modal.scss'
+import './modal-remove.scss'
 import { AiFillCloseCircle } from 'react-icons/ai'
 
-export default function RemoveModal({ setIsRemoveOpen, setIsCancel }) {
+export default function RemoveContactModal({ setIsRemoveOpen }) {
 
     const handleCancelRemoveContact = () => {
-        setIsCancel(false);
         setIsRemoveOpen(false);
         console.log('cancel')
     };
 
     const onClose = () => {
-        setIsRemoveOpen(true);
-        setIsCancel(false);
+        setIsRemoveOpen(false);
     };
 
     return (

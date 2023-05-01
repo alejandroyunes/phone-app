@@ -1,15 +1,15 @@
 import './modal-add.scss'
 import { AiFillCloseCircle } from 'react-icons/ai'
 
-export default function AddModal({ setAddContact, setCloseContact }) {
+export default function AddContactModal({ setIsConctactOpen }) {
 
     const handleAddContact = () => {
+        setIsConctactOpen(false);
         console.log('adding')
     };
 
     const onClose = () => {
-        setAddContact(true);
-        setCloseContact(false);
+        setIsConctactOpen(false);
     };
 
     return (

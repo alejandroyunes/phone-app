@@ -1,24 +1,28 @@
 import './app.scss'
 import PhoneBookHeader from "./components/phonebook-header";
 import PhoneBookBody from './components/phonebook-body'
-import RemoveModal from './components/modal-remove'
-import AddModal from './components/modal-add';
+import RemoveContactModal from './components/modal-remove-contact'
+import AddContactModal from './components/modal-add-contact';
 import { useState } from "react";
 
 function PhoneApp() {
-  const [isRemoveOpen, setIsRemoveOpen] = useState(false);
   const [isCancel, setIsCancel] = useState(false);
 
-  const [addContact, setAddContact] = useState(false);
-  const [closeContact, setCloseContact] = useState(false);
+
+
+  const [isContactOpen, setIsConctactOpen] = useState(false);
+  const [isRemoveOpen, setIsRemoveOpen] = useState(false);
+
 
   return (
       <>
-      <PhoneBookHeader />
-      <PhoneBookBody />
+      <PhoneBookHeader setIsConctactOpen={setIsConctactOpen}/>
+      <PhoneBookBody setIsRemoveOpen={setIsRemoveOpen} />
 
-      {isRemoveOpen && <RemoveModal setIsRemoveOpen={setIsRemoveOpen} setIsCancel={setIsCancel} />}
-      {addContact && <AddModal setAddContact={setAddContact} setCloseContact={setCloseContact}/>}
+
+      {isContactOpen && <AddContactModal setIsConctactOpen={setIsConctactOpen} />}
+
+      {isRemoveOpen && <RemoveContactModal setIsRemoveOpen={setIsRemoveOpen} />}
       </>
   );
 }
